@@ -1,10 +1,9 @@
 import sys
 import sqlite3
-import PySide6
-from PySide6.QtWidgets import QApplication, QWidget, QLabel, QLayoutItem, QPushButton, QListWidget, QHBoxLayout, QVBoxLayout, QFileDialog, \
-    QLineEdit, QSizePolicy, QMessageBox
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QCursor
+
+from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, \
+ QVBoxLayout, QFileDialog, QLineEdit, QMessageBox
+
 import xml_converter as converter
 import data_base_inserter as db_inserter
 
@@ -116,6 +115,7 @@ class MainWindow(QWidget):
         sql_connection.commit()
 
         sql_connection.close()
+        QMessageBox.information(self, 'Complite', 'Inserting complite!')
 
 
 if __name__ == "__main__":
